@@ -4,8 +4,11 @@
 2. Configured Tailwind CSS
 
 - Header
+- Routing (react-router-dom)
 - Login Form
 - Sign Up Form
+- Form Validation/s
+- useRef (Instead of useState -> To get input values from input boxes)
 
 # Features
 
