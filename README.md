@@ -3,6 +3,10 @@
 1. Create Vite App
 2. Configured Tailwind CSS
 
+- Header
+- Login Form
+- Sign Up Form
+
 # Features
 
 - Login/Sign Up
