@@ -9,6 +9,11 @@
 - Sign Up Form
 - Form Validation/s
 - useRef (Instead of useState -> To get input values from input boxes)
+- Firebase Setup
+- Deploying our app to production
+- Create SignUp User Account
+- Implement Sign In user Api
+- Created Redux Store with userSlice
 
 # Features
 

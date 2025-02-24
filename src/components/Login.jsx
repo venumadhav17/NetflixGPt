@@ -1,6 +1,11 @@
 import { useRef, useState } from "react";
 import Header from "./Header";
 import { checkValidate } from "../utils/validate";
+import { auth } from "../utils/firebase";
+import {
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword
+} from "firebase/auth";
 
 const Login = () => {
   const [isSignInForm, setIsSignInForm] = useState(true);
@@ -10,13 +15,49 @@ const Login = () => {
   const password = useRef(null);
 
   const handleButtonClick = () => {
-    // Validate the form data
-
-    //console.log(email.current.value);
-    //console.log(password.current.value);
     const message = checkValidate(email.current.value, password.current.value);
     setErrorMessage(message);
-    //e.preventDefault();
+
+    if (message) return;
+    // Sign In Sign Up Logic
+
+    if (!isSignInForm) {
+      // Sign Up Logic
+      createUserWithEmailAndPassword(
+        auth,
+        email.current.value,
+        password.current.value
+      )
+        .then((userCredential) => {
+          // Signed up
+          const user = userCredential.user;
+          console.log(user);
+          // ...
+        })
+        .catch((error) => {
+          const errorCode = error.code;
+          const errorMessage = error.message;
+          //setErrorMessage(errorCode + "-" + errorMessage);
+          setErrorMessage("User Already Registered!");
+        });
+    } else {
+      // Sign In Logic
+      signInWithEmailAndPassword(
+        auth,
+        email.current.value,
+        password.current.value
+      )
+        .then((userCredential) => {
+          // Signed in
+          const user = userCredential.user;
+          // ...
+        })
+        .catch((error) => {
+          const errorCode = error.code;
+          const errorMessage = error.message;
+          setErrorMessage("User Not Registered.");
+        });
+    }
   };
 
   const handleClick = () => {
@@ -41,6 +82,7 @@ const Login = () => {
         </h1>
         {!isSignInForm && (
           <input
+            ref={name}
             type='text'
             placeholder='Full Name'
             className='p-4 m-2 border border-gray-400 w-full rounded'
