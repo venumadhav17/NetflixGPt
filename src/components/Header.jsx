@@ -45,8 +45,8 @@ const Header = () => {
   }, []);
 
   return (
-    <div className='absolute w-full py-2 bg-gradient-to-b from-black z-10 pl-40 pr-20 flex justify-between items-center'>
-      <img className='w-50 h-20' src={NETFLIX_LOGO} alt='logo' />
+    <div className='absolute w-full py-1 bg-gradient-to-b from-black z-10 pl-10 pr-20 flex justify-between items-center'>
+      <img className='w-40 h-20' src={NETFLIX_LOGO} alt='logo' />
       {user && (
         <div className='flex items-center gap-4'>
           <img className='w-10 h-10' alt='usericon' src={user?.photoURL} />
