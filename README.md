@@ -17,6 +17,21 @@
 - Created Redux Store with userSlice (dispatch,useSelector, subscribe to an action)
 - Implemented Sign Out
 - Update Profile
+- BugFix: Sign Up user displayName and Profile picture update.
+- BugFix: If the user is not logged in Redirect /browse to Login page and vice-versa.
+- BugFix: Unsubscribed to the onAuthStateChanged callback.
+- Add hardcoded values to the constants file.
+- Regsiter TMDB API & Create an app & get access token.
+- Get Data from TMDB now playing movies list API(useEffect for calling api once).
+- Keep Options in constants file.
+- Custom Hook for Now Playing Movies.
+- Create movieSlice.
+- Update Store with movies Data.
+- Planning for Main Container & Secondary Container.
+- Fetch Data for Trailer Video.
+- Update Store with Trailer Video Data.
+- Embeeded the Youtube Video and make it autoplay and mute.
+- Tailwind Classes to make Main Container look awesome.
 
 # Features
 
@@ -35,5 +50,15 @@
     - MovieLists \* n
 
 2. Netflix GPT
+
    - Search Bar
    - Movie Suggestions
+
+Planning
+
+3. Main Container
+   - VideoBackground
+   - VideoTitle
+     Secondary Container
+   - MovieList \* n
+     - Cards \* n

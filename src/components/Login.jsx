@@ -7,14 +7,15 @@ import {
   signInWithEmailAndPassword,
   updateProfile
 } from "firebase/auth";
-import { useNavigate } from "react-router-dom";
+//import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { addUser } from "../utils/userSlice";
+import { LOGIN_BG_URL, USER_AVATAR_URL } from "../utils/constants";
 
 const Login = () => {
   const [isSignInForm, setIsSignInForm] = useState(true);
   const [errorMessage, setErrorMessage] = useState(null);
-  const navigate = useNavigate();
+  //const navigate = useNavigate();
   const dispatch = useDispatch();
 
   const name = useRef(null);
@@ -40,8 +41,7 @@ const Login = () => {
           const user = userCredential.user;
           updateProfile(auth.currentUser, {
             displayName: name.current.value,
-            photoURL:
-              "https://wallpapers.com/images/hd/netflix-profile-pictures-1000-x-1000-88wkdmjrorckekha.jpg"
+            photoURL: USER_AVATAR_URL
           })
             .then(() => {
               // Profile updated!
@@ -55,7 +55,7 @@ const Login = () => {
                   photoURL: photoURL
                 })
               );
-              navigate("/browse");
+              //navigate("/browse");
             })
             .catch((error) => {
               // An error occurred
@@ -63,7 +63,7 @@ const Login = () => {
               setErrorMessage(error.message);
             });
 
-          navigate("/browse");
+          //navigate("/browse");
           // ...
         })
         .catch((error) => {
@@ -82,7 +82,7 @@ const Login = () => {
         .then((userCredential) => {
           // Signed in
           const user = userCredential.user;
-          navigate("/browse");
+          //navigate("/browse");
           // ...
         })
         .catch((error) => {
@@ -101,10 +101,7 @@ const Login = () => {
     <div>
       <Header />
       <div className='absolute'>
-        <img
-          src='https://assets.nflxext.com/ffe/siteui/vlv3/0cf2c109-3af1-4a9d-87d7-aecfac5fe881/web/IN-en-20250217-TRIFECTA-perspective_c3376e06-9aff-4657-aafb-91256a597b7c_small.jpg'
-          alt='logo'
-        />
+        <img src={LOGIN_BG_URL} alt='logo' />
       </div>
       <form
         onSubmit={(e) => e.preventDefault()}
