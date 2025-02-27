@@ -41,6 +41,13 @@
 - GPT Search Page
 - GPT Search Bar
 - (FEATURE) Multi-Language Feature in our App
+- Created GPI Slice and GEMINI Slice
+- GEMINI API
+- GEMINI API for search movies in netflix (TMDB API)
+- Set Environment Variables
+- env -> import.meta.env -> For Vite -> Secure
+  - For React -> process.env
+- MEMOIZATION (Reduce API Calls) -> get selector and use ! && condition in useEffect.
 
 # Features
 

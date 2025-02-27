@@ -1,5 +1,5 @@
 import { LOGIN_BG_URL } from "../utils/constants";
-import GptMovieSuggestion from "./GPTMovieSuggestion";
+import GptMovieSuggestions from "./GptMovieSuggestions";
 import GptSearchBar from "./GptSearchBar";
 
 const GptSearch = () => {
@@ -9,7 +9,7 @@ const GptSearch = () => {
         <img src={LOGIN_BG_URL} alt='logo' />
       </div>
       <GptSearchBar />
-      <GptMovieSuggestion />
+      <GptMovieSuggestions />
     </div>
   );
 };
